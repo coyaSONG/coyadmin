@@ -1,13 +1,13 @@
-import "./single.scss";
 import {
-  ResponsiveContainer,
+  Legend,
+  Line,
   LineChart,
+  ResponsiveContainer,
+  Tooltip,
   XAxis,
   YAxis,
-  Line,
-  Tooltip,
-  Legend,
-} from "recharts";
+} from 'recharts';
+import './single.scss';
 
 interface SingleProps {
   id: number;
@@ -24,7 +24,7 @@ interface SingleProps {
   activities?: { time: string; text: string }[];
 }
 
-const Single = ({ id, img, title, info, chart, activities }: SingleProps) => {
+const Single = ({ img, title, info, chart, activities }: SingleProps) => {
   return (
     <div className="single">
       <div className="view">
