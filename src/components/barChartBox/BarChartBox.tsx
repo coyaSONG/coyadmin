@@ -1,5 +1,5 @@
 import { Bar, BarChart, ResponsiveContainer, Tooltip } from "recharts";
-import "./BarChartBox.scss";
+import "./barChartBox.scss";
 
 type BarChartBoxProps = {
   title: string;
