@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./products.scss";
 import DataTable from "../../components/dataTable/DataTable.tsx";
 import { products } from "../../data";
-import { GridColDef } from "@mui/x-data-grid";
+import type { GridColDef } from "@mui/x-data-grid";
 import Add from "../../components/add/Add.tsx";
 
 const Products = () => {

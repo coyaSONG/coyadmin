@@ -1,14 +1,16 @@
-import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+import { Outlet, RouterProvider, createHashRouter } from 'react-router-dom';
 import Footer from './components/footer/Footer';
 import Menu from './components/menu/Menu';
 import Navbar from './components/navbar/Navbar';
-import Product from './components/product/Product';
-import User from './components/user/User';
-import Home from './pages/home/Home';
-import Login from './pages/login/Login';
-import Products from './pages/products/Products';
-import Users from './pages/users/Users';
 import './styles/global.scss';
+
+const Home = lazy(() => import('./pages/home/Home'));
+const Login = lazy(() => import('./pages/login/Login'));
+const Products = lazy(() => import('./pages/products/Products'));
+const Users = lazy(() => import('./pages/users/Users'));
+const Product = lazy(() => import('./components/product/Product'));
+const User = lazy(() => import('./components/user/User'));
 
 function App() {
   const Layout = () => {
@@ -28,7 +30,7 @@ function App() {
     );
   };
 
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: '/',
       element: <Layout />,
@@ -60,7 +62,11 @@ function App() {
       element: <Login />,
     },
   ]);
-  return <RouterProvider router={router} />;
+  return (
+    <Suspense fallback={<div className="routeLoading" role="status">Loading…</div>}>
+      <RouterProvider router={router} />
+    </Suspense>
+  );
 }
 
 export default App;
