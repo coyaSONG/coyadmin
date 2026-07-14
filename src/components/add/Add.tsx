@@ -1,4 +1,4 @@
-import { GridColDef } from "@mui/x-data-grid";
+import type { GridColDef } from "@mui/x-data-grid";
 import "./add.scss";
 
 interface AddProps {
@@ -25,7 +25,7 @@ const Add = ({ slug, columns, setOpen }: AddProps) => {
           {columns
             .filter((item) => item.field !== "id" && item.field !== "img")
             .map((col) => (
-              <div className="item">
+              <div className="item" key={col.field}>
                 <label>{col.headerName}</label>
                 <input type={col.type} placeholder={col.field} />
               </div>

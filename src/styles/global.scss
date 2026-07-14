@@ -1,4 +1,4 @@
-@import "./variables.scss";
+@use "./variables" as *;
 
 * {
   margin: 0;
@@ -32,3 +32,10 @@ a {
   width: 100%;
 }
 
+.routeLoading {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: $main-bg;
+  color: $main-color;
+}
