@@ -12,6 +12,12 @@ updates:
       # typescript-eslint 8.64 supports TypeScript versions below 6.1.
       - dependency-name: typescript
         versions: [">=6.1.0"]
+      # This project still uses ESLint 8 and the 0.5 line requires ESLint 9+.
+      - dependency-name: eslint-plugin-react-refresh
+        versions: [">=0.5.0"]
+      # MUI X 9 requires Material UI 7.3+; MUI X 8 still supports Material UI 5.
+      - dependency-name: "@mui/x-data-grid"
+        versions: [">=9.0.0"]
     commit-message:
       prefix: chore
       include: scope
